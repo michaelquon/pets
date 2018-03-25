@@ -1,0 +1,15 @@
+<div id="wrapper">
+<div class="atag"><a href="/home">Home</a></div>
+<h2>Details about&nbsp;{{ petName.name }}</h2><br>
+
+<h4><strong>Pet type:&nbsp;&nbsp;</strong>{{ petName.type }}</h4>
+<h4><strong>Description:&nbsp;&nbsp;</strong>{{ petName.description }}</h4>
+<h4><strong>Skills:&nbsp;&nbsp;</strong>{{ petName.skill1 }}</h4>
+<h4 class="skills">{{ petName.skill2 }}</h4>
+<h4 class="skills">{{ petName.skill3 }}</h4>
+<h4><strong>Likes:&nbsp;&nbsp;</strong>{{ petName.likes }}</h4>
+<div>
+<button (click)="likePet(petName['_id'], petName['likes'])" [disabled]="buttonDisabled" type="button" class="btn btn-primary">Likes</button>
+<button (click)="deletePet(petName['_id'])" type="button" class="btn btn-primary">Adopt this pet!</button>
+</div>
+</div>

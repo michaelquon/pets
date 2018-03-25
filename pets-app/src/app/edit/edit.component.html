@@ -1,0 +1,53 @@
+<div id="wrapper">
+    <h2>Edit this pet</h2>
+    <form id="form" (submit)="addPet(petName._id)">
+      <div class="form-group">
+        <label for="name">Pet name:</label>
+        <p style="color: red;"><strong>{{error}}</strong> </p>
+        <input [(ngModel)]="petName.name" required minlength="3" #name="ngModel" name="name" type="text" class="form-control" id="name" autocomplete="off">
+        <div *ngIf="name.invalid && (name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 3 characters long.
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="type">Pet type:</label>
+        <input [(ngModel)]="petName.type" name="type" required minlength="3" #type="ngModel" type="text" class="form-control" id="type" autocomplete="off">
+        <div *ngIf="type.invalid && (type.touched)" class="alert alert-danger">
+            <div *ngIf="type.errors.required">
+              Type is required.
+            </div>
+            <div *ngIf="type.errors.minlength">
+              Type must be at least 3 characters long.
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input [(ngModel)]="petName.description" name="description" type="text" class="form-control" id="description">
+      </div>
+      <label for="">Skills</label>
+      <div id="skills">
+        <div class="form-group">
+          <label for="skill1">Skill 1:</label>
+          <input [(ngModel)]="petName.skill1" name="skill1" type="text" class="form-control" id="skill1">
+        </div>
+        <div class="form-group">
+          <label for="skill2">Skill 2:</label>
+          <input [(ngModel)]="petName.skill2" name="skill2" type="text" class="form-control" id="skill2">
+        </div>
+        <div class="form-group">
+          <label for="skill3">Skill 3:</label>
+          <input [(ngModel)]="petName.skill3" name="skill3" type="text" class="form-control" id="skill3">
+        </div>
+      </div>
+      <div id="btn">
+      <button type="submit" class="btn btn-primary">Edit pet</button>
+      <button (click)="getInfo(petName['_id'])" type="button" class="btn btn-primary">Cancel</button>
+      </div>
+    </form>
+  </div>

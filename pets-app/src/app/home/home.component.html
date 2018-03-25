@@ -1,0 +1,24 @@
+<div id="wrapper">
+  <h2>These pets are looking for a home</h2>
+  <a href="/new">Add a pet to the shelter</a>
+  <table id="pet-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of pets">
+        <td>{{i.name}}</td>
+        <td>{{i.type}}</td>
+        <td>
+          <button (click)="getInfo(i['_id'])" type="button" class="btn btn-primary">Details</button>&nbsp;
+          <button (click)="getEdit(i['_id'])" type="button" class="btn btn-primary">Edit</button>
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>
+</div>

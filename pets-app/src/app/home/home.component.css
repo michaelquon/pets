@@ -1,0 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+#pet-table{
+    width: 50rem;
+}
+#wrapper{
+    margin-left: 2rem;
+}
